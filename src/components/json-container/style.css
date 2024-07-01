@@ -1,0 +1,12 @@
+textarea {
+    min-width: 300px;
+    min-height: 400px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: red;
+}
