@@ -25,3 +25,23 @@
   align-items: center;
   font-weight: 600;
 }
+
+.green {
+  position: absolute;
+  top: 10px;
+  color: #0a3622;
+  border-color: #a3cfbb;
+  background-color: #d1e7dd;
+  width: 100%;
+  text-align: center;
+}
+
+.red {
+  position: absolute;
+  top: 10px;
+  color: #58151c;
+  border-color: #f1aeb5;
+  background-color: #f8d7da;
+  width: 100%;
+  text-align: center;
+}
