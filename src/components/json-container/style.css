@@ -1,6 +1,8 @@
 textarea {
     min-width: 350px;
     min-height: 600px;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 4px;
 }
 .container {
     display: flex;
@@ -10,3 +12,7 @@ textarea {
 .error {
     color: red;
 }
+
+/* .json {
+    background-color: inherit;
+} */

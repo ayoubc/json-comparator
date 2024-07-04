@@ -5,11 +5,11 @@ import { JsonObj } from '../../types';
 
 
 type Props = {
-    update: (value: JsonObj, jsonKey: Number) =>  void,
+    update: (value: JsonObj, jsonKey: Number) => void,
     jsonKey: Number
 }
 
-function JsonContainer({update, jsonKey}: Props) {
+function JsonContainer({ update, jsonKey }: Props) {
 
     const [content, setContent] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
@@ -20,20 +20,24 @@ function JsonContainer({update, jsonKey}: Props) {
         setContent(value);
         const timeOut = setTimeout(() => {
             try {
-                const obj: JsonObj = JSON.parse(value)
+                if (value) {
+                    const obj: JsonObj = JSON.parse(value)
+                    update(obj, jsonKey);
+                    setContent(JSON.stringify(obj, null, 2));
+                }
                 setError(null);
-                update(obj, jsonKey);
             } catch (error) {
                 console.error('Invalid JSON format', error);
                 setError('Invalid JSON format');
             }
+
         }, 1000);
 
         setTimer(timeOut);
     }
     return (
         <div className='container'>
-            <textarea className="json" value={content} onChange={e => handleChange(e.target.value)}>
+            <textarea className="json" value={content} onChange={e => handleChange(e.target.value)} placeholder="Enter Json to compare">
             </textarea>
             {error && <small className='error'>{error}</small>}
         </div>

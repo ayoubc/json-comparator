@@ -5,5 +5,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(242, 242, 242);
   /* flex-direction: column; */
+}
+
+.btn-compare {
+  margin: 15px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 4px;
+  line-height: 1.334;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  background-color: rgb(255, 108, 55);
+  /* color: rgb(255, 255, 255); */
+  color: rgb(242, 242, 242);
+  padding: 0px 12px;
+  border: medium;
+  align-items: center;
+  font-weight: 600;
 }

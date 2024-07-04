@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import { compareObjects, sortObject } from './utils';
+import { isEqual, sortObject } from './utils';
 import { JsonObj } from './types';
 import JsonContainer from './components/json-container';
 
@@ -10,8 +10,11 @@ function App() {
     const [json2, setJson2] = useState<JsonObj>();
 
     const compareObjects = (): void => {
-        console.log(sortObject(json1));
-        console.log(sortObject(json2));
+        const obj1 = sortObject(json1);
+        const obj2 = sortObject(json2);
+        console.log(obj1);
+        console.log(obj2);
+        console.log(isEqual(obj1, obj2));
     }
 
     const updateObjects = (value: JsonObj, key: Number): void => {
@@ -21,9 +24,10 @@ function App() {
 
     return (
         <div className="App">
-            <JsonContainer update={updateObjects} jsonKey={1}/>
-            <button onClick={compareObjects}>compare</button>
-            <JsonContainer update={updateObjects} jsonKey={2}/>
+            <JsonContainer update={updateObjects} jsonKey={1} />
+            <button className="btn-compare"
+                onClick={compareObjects} disabled={!json1 || !json2}>Compare</button>
+            <JsonContainer update={updateObjects} jsonKey={2} />
         </div>
     );
 }
