@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/json-comparator/static/css/main.e7c0c7d7.css",
+    "main.js": "/json-comparator/static/js/main.6b1d360b.js",
+    "static/js/453.48b1ba8a.chunk.js": "/json-comparator/static/js/453.48b1ba8a.chunk.js",
+    "index.html": "/json-comparator/index.html",
+    "main.e7c0c7d7.css.map": "/json-comparator/static/css/main.e7c0c7d7.css.map",
+    "main.6b1d360b.js.map": "/json-comparator/static/js/main.6b1d360b.js.map",
+    "453.48b1ba8a.chunk.js.map": "/json-comparator/static/js/453.48b1ba8a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e7c0c7d7.css",
+    "static/js/main.6b1d360b.js"
+  ]
+}
