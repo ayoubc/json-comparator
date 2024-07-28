@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import { isEqual, sortObject } from './utils';
+import { isEqual } from './utils';
 import { JsonObj } from './types';
 import JsonContainer from './components/json-container';
 
@@ -19,11 +19,11 @@ function App() {
     const [results, setResults] = useState<Number>(Equal.NEUTRAL);
 
     const compareObjects = (): void => {
-        const obj1 = sortObject(json1);
-        const obj2 = sortObject(json2);
-        console.log(obj1);
-        console.log(obj2);
-        const result = isEqual(obj1, obj2);
+        // const obj1 = sortObject(json1);
+        // const obj2 = sortObject(json2);
+        console.log(json1);
+        console.log(json2);
+        const result = isEqual(json1, json2);
         console.log(result);
         setResults(result ? Equal.TRUE : Equal.FALSE);
     }

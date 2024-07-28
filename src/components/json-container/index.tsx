@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import './style.css';
 import { JsonObj } from '../../types';
+import { sortObject } from '../../utils';
 
 
 type Props = {
@@ -21,7 +22,8 @@ function JsonContainer({ update, jsonKey }: Props) {
         const timeOut = setTimeout(() => {
             try {
                 if (value) {
-                    const obj: JsonObj = JSON.parse(value)
+                    // sort object so the user can see the comparaison easily
+                    const obj: JsonObj = sortObject(JSON.parse(value));
                     update(obj, jsonKey);
                     setContent(JSON.stringify(obj, null, 2));
                 }
