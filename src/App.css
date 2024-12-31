@@ -45,3 +45,15 @@
   width: 100%;
   text-align: center;
 }
+
+#ignoreKeys {
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+}
+
+#tools {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}

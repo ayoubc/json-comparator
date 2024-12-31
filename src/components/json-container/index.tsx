@@ -7,10 +7,11 @@ import { sortObject } from '../../utils';
 
 type Props = {
     update: (value: JsonObj, jsonKey: Number) => void,
-    jsonKey: Number
+    jsonKey: Number,
+    keysToIgnore: string[]
 }
 
-function JsonContainer({ update, jsonKey }: Props) {
+function JsonContainer({ update, jsonKey, keysToIgnore }: Props) {
 
     const [content, setContent] = useState<string>('');
     const [error, setError] = useState<string | null>(null);
@@ -37,6 +38,7 @@ function JsonContainer({ update, jsonKey }: Props) {
 
         setTimer(timeOut);
     }
+    
     return (
         <div className='container'>
             <textarea className="json" value={content} onChange={e => handleChange(e.target.value)} placeholder="Enter Json to compare">
